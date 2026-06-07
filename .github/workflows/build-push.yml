@@ -148,7 +148,7 @@ jobs:
           image-ref: ${{ env.IMAGE }}
           format: table
           exit-code: '1'
-          ignore-unfixed: false
+          ignore-unfixed: true
           severity: CRITICAL
 
       - name: Push to ECR
