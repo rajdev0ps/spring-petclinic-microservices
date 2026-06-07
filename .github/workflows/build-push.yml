@@ -95,7 +95,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: us-east-1
 
       - name: Login to ECR
         uses: aws-actions/amazon-ecr-login@v2
@@ -113,7 +113,7 @@ jobs:
           SERVICE: ${{ matrix.service }}
         run: |
           SHA7="${GITHUB_SHA::7}"
-          REGISTRY="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com"
+          REGISTRY="025760030746.dkr.ecr.us-east-1.amazonaws.com"
           IMAGE="${REGISTRY}/petclinic-dev/${SERVICE}:${SHA7}"
           echo "IMAGE=${IMAGE}" >> "$GITHUB_ENV"
 
