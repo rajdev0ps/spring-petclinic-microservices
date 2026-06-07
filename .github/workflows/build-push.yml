@@ -9,6 +9,9 @@ permissions:
   contents: read
   security-events: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   # ─── Job 1: Detect which services changed ──────────────────────────────────
   detect-changes:
