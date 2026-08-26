@@ -98,7 +98,7 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::025760030746:role/petclinic-github-actions-role
+          role-to-assume: arn:aws:iam::995679261046:role/petclinic-github-actions-role
           aws-region: us-east-1
 
       - name: Login to ECR
@@ -117,7 +117,7 @@ jobs:
           SERVICE: ${{ matrix.service }}
         run: |
           SHA7="${GITHUB_SHA::7}"
-          REGISTRY="025760030746.dkr.ecr.us-east-1.amazonaws.com"
+          REGISTRY="995679261046.dkr.ecr.us-east-1.amazonaws.com"
           IMAGE="${REGISTRY}/petclinic-dev/${SERVICE}:${SHA7}"
           echo "IMAGE=${IMAGE}" >> "$GITHUB_ENV"
 
